@@ -1,0 +1,44 @@
+#N canvas 100 51 1143 810 12;
+#X obj 183 216 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 3200 1;
+#X obj 325 217 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 2900 1;
+#X obj 177 340 dac~;
+#X text 331 248 granular synthesis example;
+#X text 332 269 double click to see inside;
+#X text 180 195 play speed;
+#X text 320 195 playhead start position;
+#X obj 403 85 serial_communication_example;
+#X msg 469 35 close;
+#X msg 469 60 devices;
+#X obj 403 14 hradio 15 1 0 8 empty empty port 0 -8 0 10 -262144 -1
+-1 3;
+#X msg 403 36 open \$1;
+#X obj 236 296 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 5900 1;
+#X text 369 296 volume;
+#X obj 384 66 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 179 297 *~ 0;
+#X obj 179 245 granular/granular, f 20;
+#X obj 403 113 unpack 0 0 0 0, f 19;
+#X floatatom 404 142 5 0 0 0 - - -;
+#X floatatom 445 142 5 0 0 0 - - -;
+#X floatatom 486 143 5 0 0 0 - - -;
+#X floatatom 528 143 5 0 0 0 - - -;
+#X connect 0 0 16 0;
+#X connect 1 0 16 1;
+#X connect 7 0 14 0;
+#X connect 7 0 17 0;
+#X connect 8 0 7 0;
+#X connect 9 0 7 0;
+#X connect 10 0 11 0;
+#X connect 11 0 7 0;
+#X connect 12 0 15 1;
+#X connect 15 0 2 0;
+#X connect 15 0 2 1;
+#X connect 16 0 15 0;
+#X connect 17 0 18 0;
+#X connect 17 1 19 0;
+#X connect 17 2 20 0;
+#X connect 17 3 21 0;

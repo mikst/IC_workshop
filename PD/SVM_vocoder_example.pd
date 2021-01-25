@@ -1,0 +1,122 @@
+#N canvas 112 23 1231 799 12;
+#X obj 319 251 ml.svm;
+#X obj 200 577 dac~;
+#X obj 43 251 list prepend;
+#X obj 43 279 list prepend add;
+#X obj 43 305 list trim;
+#X obj 318 218 list trim;
+#X obj 318 192 list prepend map;
+#X obj 176 106 gate 2 1;
+#X obj 176 82 + 1;
+#X obj 244 109 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 156 112 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 156 52 hradio 15 1 0 2 empty empty train/map 0 -8 0 10 -262144
+-1 -1 1;
+#X obj 359 89 gate;
+#X obj 359 68 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 529 98 serial_communication_example;
+#X msg 599 50 close;
+#X msg 599 75 devices;
+#X obj 533 29 hradio 15 1 0 8 empty empty port 0 -8 0 10 -262144 -1
+-1 3;
+#X msg 533 51 open \$1;
+#X obj 125 207 hradio 15 1 0 4 empty empty guesture 0 -8 0 10 -262144
+-1 -1 3;
+#X obj 125 226 + 1;
+#X floatatom 318 299 5 0 0 0 - - -;
+#X msg 487 219 clear;
+#X msg 489 246 train;
+#X msg 490 274 help;
+#X msg 503 321 null_rejection 1;
+#X msg 504 347 null_rejection_coeff 0.5;
+#X text 531 125 outputs sensor data as a list;
+#X text 664 25 1: open a port to read sensor data;
+#X text 56 19 2: switch to train mode;
+#X text 246 32 and open the gate to add training data;
+#X text 16 178 4: set which gesture you are trainig;
+#X text 239 15 5:make sure you are posing the guesture;
+#X text 539 218 3:clear before training new set;
+#X text 41 150 6: repeat 4-5 to add all the guestures;
+#X text 538 245 7:train the network;
+#X text 302 49 close the gate before you move;
+#X text 9 71 8:switch to map mode;
+#X text 322 119 9: open the gate and let;
+#X text 323 138 sensor data to be mapped;
+#X text 255 334 10:classification result;
+#X obj 210 537 vocoderRL/vocoderRL;
+#X text 351 539 vocoder;
+#X obj 288 496 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 447 496 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 599 495 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 289 472 0-1 tune;
+#X text 444 473 0-1 squelch;
+#X text 596 474 0-1 wet/dry;
+#X obj 150 468 sel 1 2 3 4;
+#X msg 139 497 72;
+#X msg 204 497 62;
+#X obj 151 442 change;
+#X msg 172 497 82;
+#X text 288 431 you can manually adjust these parameters \, or trigger
+with selected class;
+#X obj 665 50 loadbang;
+#X obj 359 276 print svm;
+#X msg 504 371 write /Users/mikst/Documents/workshop/LINZ/PD/testSVM
+;
+#X msg 503 396 read /Users/mikst/Documents/workshop/LINZ/PD/testSVM.model
+;
+#X obj 696 289 loadbang;
+#X obj 698 313 delay 500;
+#X obj 697 335 t b b;
+#X connect 0 0 21 0;
+#X connect 0 1 56 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X connect 6 0 5 0;
+#X connect 7 0 10 0;
+#X connect 7 0 2 0;
+#X connect 7 1 9 0;
+#X connect 7 1 6 0;
+#X connect 8 0 7 0;
+#X connect 11 0 8 0;
+#X connect 12 0 7 1;
+#X connect 13 0 12 0;
+#X connect 14 0 12 1;
+#X connect 15 0 14 0;
+#X connect 16 0 14 0;
+#X connect 17 0 18 0;
+#X connect 18 0 14 0;
+#X connect 19 0 20 0;
+#X connect 20 0 2 1;
+#X connect 21 0 52 0;
+#X connect 22 0 0 0;
+#X connect 23 0 0 0;
+#X connect 24 0 0 0;
+#X connect 25 0 0 0;
+#X connect 26 0 0 0;
+#X connect 41 0 1 0;
+#X connect 41 0 1 1;
+#X connect 43 0 41 2;
+#X connect 44 0 41 3;
+#X connect 45 0 41 4;
+#X connect 49 1 50 0;
+#X connect 49 2 53 0;
+#X connect 49 3 51 0;
+#X connect 50 0 41 0;
+#X connect 51 0 41 0;
+#X connect 52 0 49 0;
+#X connect 53 0 41 0;
+#X connect 55 0 15 0;
+#X connect 57 0 0 0;
+#X connect 58 0 0 0;
+#X connect 59 0 60 0;
+#X connect 60 0 61 0;
+#X connect 61 0 25 0;
+#X connect 61 1 26 0;

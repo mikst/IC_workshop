@@ -1,0 +1,129 @@
+#N canvas 89 23 1270 711 12;
+#X msg 786 340 train;
+#X msg 785 316 clear;
+#X obj 479 412 print ann;
+#X msg 786 363 help;
+#X obj 421 391 ml.ann;
+#X obj 108 291 pak 0 0, f 8;
+#X obj 28 317 list prepend;
+#X obj 28 345 list prepend add;
+#X obj 28 371 list trim;
+#X msg 786 224 num_outputs 2;
+#X msg 785 247 mode 1;
+#X obj 421 279 list trim;
+#X obj 421 253 list prepend map;
+#X obj 320 332 print output;
+#X text 897 225 number of outputs;
+#X text 848 248 mode: classification 0 \, regression 1;
+#X obj 434 578 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 588 578 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 422 445 unpack;
+#X obj 433 552 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 587 552 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 176 106 gate 2 1;
+#X obj 176 82 + 1;
+#X obj 244 109 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 156 112 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 174 63 hradio 15 1 0 2 empty empty train/map 0 -8 0 10 -262144
+-1 -1 1;
+#X obj 718 93 serial_communication_example;
+#X msg 788 45 close;
+#X msg 788 70 devices;
+#X obj 722 24 hradio 15 1 0 8 empty empty port 0 -8 0 10 -262144 -1
+-1 3;
+#X msg 722 46 open \$1;
+#X obj 446 99 gate;
+#X obj 446 78 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 852 22 1: open a port to read sensor data;
+#X text 31 25 2: switch to train mode;
+#X text 210 62 8:switch to map mode;
+#X text 381 40 and open the gate to add training data;
+#X text 374 23 5:make sure you are posing the guesture;
+#X text 437 57 close the gate before you move;
+#X text 408 128 9: open the gate and let;
+#X text 409 147 sensor data to be mapped;
+#X text 429 611 4: move the slider to set the trainig target value
+;
+#X text 388 645 6: repeat 4-5. change the target value and posture
+each time;
+#X text 836 313 3:clear before training new set;
+#X text 835 340 7:train the network;
+#X text 482 445 10:result comes out here;
+#X text 852 189 initial ann setting;
+#X msg 765 425 write /Users/mikst/Documents/workshop/LINZ/PD/testANN.data
+;
+#X msg 765 451 read /Users/mikst/Documents/workshop/LINZ/PD/testANN.data
+;
+#X text 766 400 write training data \, you need absolute path;
+#X text 766 476 read training data \, you need absolute path;
+#X text 767 493 after reading \, you need to train;
+#X text 767 511 ml.ann does not write .model files >> fixed in newer
+version;
+#X obj 109 232 * 100;
+#X obj 108 261 i;
+#X obj 162 233 * 100;
+#X obj 161 262 i;
+#X obj 423 497 / 100;
+#X obj 493 493 / 100;
+#X obj 319 303 gate;
+#X obj 319 281 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 423 473 5 0 0 0 - - -;
+#X floatatom 492 472 5 0 0 0 - - -;
+#X obj 791 144 loadbang;
+#X obj 790 171 delay 500;
+#X obj 789 193 t b b;
+#X connect 0 0 4 0;
+#X connect 1 0 4 0;
+#X connect 3 0 4 0;
+#X connect 4 0 18 0;
+#X connect 4 0 59 1;
+#X connect 4 1 2 0;
+#X connect 5 0 6 1;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 4 0;
+#X connect 9 0 4 0;
+#X connect 10 0 4 0;
+#X connect 11 0 4 0;
+#X connect 12 0 11 0;
+#X connect 16 0 53 0;
+#X connect 17 0 55 0;
+#X connect 18 0 61 0;
+#X connect 18 1 62 0;
+#X connect 21 0 24 0;
+#X connect 21 0 6 0;
+#X connect 21 1 23 0;
+#X connect 21 1 12 0;
+#X connect 22 0 21 0;
+#X connect 25 0 22 0;
+#X connect 26 0 31 1;
+#X connect 27 0 26 0;
+#X connect 28 0 26 0;
+#X connect 29 0 30 0;
+#X connect 30 0 26 0;
+#X connect 31 0 21 1;
+#X connect 32 0 31 0;
+#X connect 47 0 4 0;
+#X connect 48 0 4 0;
+#X connect 53 0 54 0;
+#X connect 54 0 5 0;
+#X connect 55 0 56 0;
+#X connect 56 0 5 1;
+#X connect 57 0 19 0;
+#X connect 58 0 20 0;
+#X connect 59 0 13 0;
+#X connect 60 0 59 0;
+#X connect 61 0 57 0;
+#X connect 62 0 58 0;
+#X connect 63 0 64 0;
+#X connect 64 0 65 0;
+#X connect 65 0 9 0;
+#X connect 65 1 10 0;
