@@ -1,0 +1,32 @@
+hidden layer 1
+id:  0
+float my_weight1 =  3.45;
+float my_weight2 = -3.67; 
+float my_weight3 = -1.88; 
+float my_weight4 = 5.82;
+float my_bias = -2.26;
+
+id:  1
+float my_weight1 =  0.11;
+float my_weight2 = -1.84;
+float my_weight3 = -0.83; 
+float my_weight4 = 3.48;
+float my_bias = -0.8;
+
+------
+hidden layer 2
+id:  0
+float my_weight1 = -0.66; 
+float my_weight2 = -1.67;
+float my_bias =  0.81;
+
+id:  1
+float my_weight1 = 6.92;
+float my_weight2 = 2.02;
+float my_bias =  -4.19;
+-------
+
+OUTPUT layer
+float my_weight1 = -2.05;
+float my_weight2 = 8.63;
+float my_bias =  -3.4;
