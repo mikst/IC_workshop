@@ -10,8 +10,13 @@ digitalWrite(13,HIGH);
 
 void loop() {
  // Serial.print("[ ");
-for (int i=0; i<4; i++){
+   Serial.print(0);
+  Serial.print(" ");
+    Serial.print(1023);
+  Serial.print(" ");
+for (int i=0; i<1; i++){
   val[i] = analogRead(pin[i]);
+  //val[i] = val[i]/1023.0;
   Serial.print(val[i]);
   Serial.print(" ");
 }

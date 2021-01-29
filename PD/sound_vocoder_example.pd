@@ -1,8 +1,8 @@
-#N canvas 40 23 1264 855 12;
+#N canvas 40 23 1264 755 12;
 #X obj 123 272 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 3200 1;
+-1 -1 8700 1;
 #X obj 265 273 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 4000 1;
+-1 -1 8200 1;
 #X obj 120 391 dac~;
 #X obj 403 85 serial_communication_example;
 #X msg 469 35 close;
@@ -11,9 +11,9 @@
 -1 3;
 #X msg 403 36 open \$1;
 #X obj 406 273 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 5500 1;
+-1 -1 9900 1;
 #X obj 548 274 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 6300 1;
+-1 -1 9500 1;
 #X obj 123 323 vocoderRL/vocoderRL;
 #X text 121 244 note and trigger;
 #X text 271 246 tune;
@@ -22,7 +22,7 @@
 #X obj 371 63 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 182 350 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 8500 1;
+-1 -1 6200 1;
 #X text 315 350 volume;
 #X obj 123 349 *~ 0.8;
 #X obj 403 116 unpack 0 0 0 0, f 18;
@@ -30,6 +30,10 @@
 #X floatatom 444 147 5 0 0 0 - - -;
 #X floatatom 485 148 5 0 0 0 - - -;
 #X floatatom 527 148 5 0 0 0 - - -;
+#X msg 113 171 72;
+#X msg 146 171 78;
+#X msg 81 171 82;
+#X msg 178 171 62;
 #X connect 0 0 10 1;
 #X connect 1 0 10 2;
 #X connect 3 0 15 0;
@@ -48,3 +52,4 @@
 #X connect 19 1 21 0;
 #X connect 19 2 22 0;
 #X connect 19 3 23 0;
+#X connect 26 0 10 0;

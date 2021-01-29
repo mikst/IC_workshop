@@ -24,11 +24,11 @@
 #X obj 297 157 t b f;
 #X obj 36 296 random 50;
 #X obj 389 122 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 3200 1;
-#X floatatom 76 323 5 0 0 0 - - -;
+-1 -1 0 1;
+#X floatatom 76 322 5 0 0 0 - - -;
 #X obj 138 188 +~;
 #X obj 592 187 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 2900 1;
+-1 -1 0 1;
 #X obj 138 227 wrap~;
 #X floatatom 250 185 5 0 0 0 - - -;
 #X obj 136 91 t a b;
@@ -44,8 +44,8 @@
 #X obj 419 306 loadbang;
 #X text 599 162 playhead start position 0-1;
 #X obj 176 189 t a b;
-#X obj 386 147 * 2;
-#X msg 420 352 read -resize ../sounds/trombone.wav grainArray;
+#X obj 386 147 * 3;
+#X msg 420 353 read -resize ../sounds/sadsong.wav grainArray;
 #X connect 0 0 2 0;
 #X connect 0 0 13 0;
 #X connect 0 0 9 1;

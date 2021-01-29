@@ -1,36 +1,47 @@
-#N canvas 89 23 1231 799 12;
-#X obj 531 432 dac~;
-#X obj 529 98 serial_communication_example;
-#X msg 599 50 close;
-#X msg 599 75 devices;
-#X obj 533 29 hradio 15 1 0 8 empty empty port 0 -8 0 10 -262144 -1
+#N canvas 554 24 580 503 12;
+#X obj 64 444 dac~;
+#X obj 56 97 serial_communication_example;
+#X msg 126 49 close;
+#X msg 126 74 devices;
+#X obj 60 28 hradio 15 1 0 8 empty empty port 0 -8 0 10 -262144 -1
 -1 3;
-#X msg 533 51 open \$1;
-#X text 661 395 triggering sound file example;
-#X text 664 25 1: open a port to read sensor data;
-#X obj 540 393 triggersoundfile;
-#X obj 529 123 unpack 0 0 0 0, f 18;
-#X floatatom 528 159 5 0 0 0 - - -;
-#X floatatom 568 159 5 0 0 0 - - -;
-#X floatatom 610 160 5 0 0 0 - - -;
-#X floatatom 650 160 5 0 0 0 - - -;
-#X obj 537 343 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X msg 60 50 open \$1;
+#X text 188 394 triggering sound file example;
+#X text 191 24 1: open a port to read sensor data;
+#X obj 67 392 triggersoundfile;
+#X floatatom 55 158 5 0 0 0 - - -;
+#X floatatom 95 158 5 0 0 0 - - -;
+#X floatatom 137 159 5 0 0 0 - - -;
+#X floatatom 177 159 5 0 0 0 - - -;
+#X obj 54 335 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 118 344 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 591 345 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 174 342 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 647 343 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X connect 1 0 9 0;
+#X obj 56 226 > 300;
+#X obj 54 278 sel 1;
+#X obj 55 251 change;
+#X obj 56 122 unpack 0 0 0 0 0 0, f 29;
+#X floatatom 218 159 5 0 0 0 - - -;
+#X floatatom 258 159 5 0 0 0 - - -;
+#X connect 1 0 19 0;
 #X connect 2 0 1 0;
 #X connect 3 0 1 0;
 #X connect 4 0 5 0;
 #X connect 5 0 1 0;
 #X connect 8 0 0 0;
 #X connect 8 0 0 1;
-#X connect 9 0 10 0;
-#X connect 9 1 11 0;
-#X connect 9 2 12 0;
-#X connect 9 3 13 0;
-#X connect 14 0 8 0;
-#X connect 15 0 8 1;
-#X connect 16 0 8 2;
+#X connect 9 0 16 0;
+#X connect 13 0 8 0;
+#X connect 14 0 8 1;
+#X connect 15 0 8 2;
+#X connect 16 0 18 0;
+#X connect 17 0 13 0;
+#X connect 18 0 17 0;
+#X connect 19 0 9 0;
+#X connect 19 1 10 0;
+#X connect 19 2 11 0;
+#X connect 19 3 12 0;
+#X connect 19 4 20 0;
+#X connect 19 5 21 0;

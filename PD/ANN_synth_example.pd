@@ -13,7 +13,7 @@
 #X obj 28 371 list trim;
 #X obj 77 266 i;
 #X obj 130 267 i;
-#X msg 585 213 mode 1;
+#X msg 832 234 mode 1;
 #X obj 215 792 dac~;
 #X obj 283 200 list trim;
 #X obj 283 174 list prepend map;
@@ -22,14 +22,14 @@
 #X obj 79 104 gate 2 1;
 #X obj 79 80 + 1;
 #X obj 284 443 print output;
-#X text 697 191 number of outputs;
+#X text 944 212 number of outputs;
 #X text 434 500 number of outputs;
-#X obj 403 85 serial_communication_example;
-#X msg 469 35 close;
-#X msg 469 60 devices;
-#X obj 403 14 hradio 15 1 0 8 empty empty port 0 -8 0 10 -262144 -1
+#X obj 516 88 serial_communication_example;
+#X msg 582 38 close;
+#X msg 582 63 devices;
+#X obj 516 17 hradio 15 1 0 8 empty empty port 0 -8 0 10 -262144 -1
 -1 3;
-#X msg 403 36 open \$1;
+#X msg 516 39 open \$1;
 #X obj 147 107 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 59 110 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -37,7 +37,7 @@
 #X obj 79 58 hradio 15 1 0 2 empty empty train/map 0 -8 0 10 -262144
 -1 -1 1;
 #X text 64 177 type in the training target;
-#X text 648 214 mode: classification 0 \, regression 1;
+#X text 895 235 mode: classification 0 \, regression 1;
 #X text 634 280 clear before starting new training;
 #X text 635 307 train after adding the data;
 #X obj 297 92 gate;
@@ -69,7 +69,7 @@
 #X floatatom 178 218 5 0 0 0 - - -;
 #X obj 179 241 * 100;
 #X obj 232 243 * 100;
-#X msg 586 190 num_outputs 4;
+#X msg 833 211 num_outputs 4;
 #X text 539 672 cutoff;
 #X text 231 671 offset;
 #X text 383 670 frequency;
@@ -83,7 +83,7 @@
 #X obj 317 621 line;
 #X obj 411 619 line;
 #X obj 509 613 line;
-#X obj 375 77 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 488 80 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 214 548 max 0;
 #X obj 214 573 min 1;
@@ -92,8 +92,8 @@
 #X obj 280 577 min 1;
 #X obj 351 550 max 0;
 #X obj 351 575 min 1;
-#X obj 463 548 max 0;
-#X obj 463 573 min 1;
+#X obj 417 549 max 0;
+#X obj 417 574 min 1;
 #X msg 315 601 \$1 100;
 #X msg 411 597 \$1 100;
 #X msg 509 591 \$1 100;
@@ -101,10 +101,21 @@
 -1 -1 0 1;
 #X text 408 764 volume;
 #X obj 216 763 *~ 0.8;
-#X obj 589 118 loadbang;
-#X obj 588 145 delay 500;
-#X obj 587 167 t b b;
+#X obj 836 139 loadbang;
+#X obj 835 166 delay 500;
+#X obj 834 188 t b b;
 #X obj 217 724 analogStyle/analogStyle, f 29;
+#X obj 515 116 unpack 0 0 0 0 0 0, f 29;
+#X floatatom 515 141 5 0 0 0 - - -;
+#X floatatom 554 141 5 0 0 0 - - -;
+#X floatatom 594 142 5 0 0 0 - - -;
+#X floatatom 634 142 5 0 0 0 - - -;
+#X floatatom 673 142 5 0 0 0 - - -;
+#X floatatom 713 143 5 0 0 0 - - -;
+#X obj 518 173 pack 0 0 0;
+#X text 849 331 to save training data \, you need absolute path;
+#X text 807 403 to read saved training data \, you need absolute path
+;
 #X connect 0 0 4 0;
 #X connect 1 0 4 0;
 #X connect 3 0 4 0;
@@ -130,8 +141,8 @@
 #X connect 18 1 15 0;
 #X connect 18 1 28 0;
 #X connect 19 0 18 0;
-#X connect 23 0 35 1;
 #X connect 23 0 69 0;
+#X connect 23 0 89 0;
 #X connect 24 0 23 0;
 #X connect 25 0 23 0;
 #X connect 26 0 27 0;
@@ -191,3 +202,13 @@
 #X connect 87 0 57 0;
 #X connect 87 1 12 0;
 #X connect 88 0 84 0;
+#X connect 89 0 90 0;
+#X connect 89 1 91 0;
+#X connect 89 2 92 0;
+#X connect 89 3 93 0;
+#X connect 89 4 94 0;
+#X connect 89 5 95 0;
+#X connect 90 0 96 0;
+#X connect 91 0 96 1;
+#X connect 92 0 96 2;
+#X connect 96 0 35 1;

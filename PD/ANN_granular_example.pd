@@ -1,21 +1,21 @@
-#N canvas 96 23 1143 810 12;
+#N canvas 90 129 1143 810 12;
 #X msg 586 306 train;
 #X msg 585 282 clear;
 #X obj 342 413 print ann;
 #X msg 586 329 help;
 #X obj 284 392 ml.ann;
 #X obj 222 647 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 5700 1;
 #X obj 364 648 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 3300 1;
 #X obj 108 291 pak 0 0, f 8;
 #X obj 28 317 list prepend;
 #X obj 28 345 list prepend add;
 #X obj 28 371 list trim;
 #X obj 108 266 i;
 #X obj 161 267 i;
-#X msg 586 190 num_outputs 2;
-#X msg 585 213 mode 1;
+#X msg 846 209 num_outputs 2;
+#X msg 845 232 mode 1;
 #X obj 216 771 dac~;
 #X obj 283 200 list trim;
 #X obj 283 174 list prepend map;
@@ -24,18 +24,18 @@
 #X obj 79 104 gate 2 1;
 #X obj 79 80 + 1;
 #X obj 182 352 print output;
-#X text 697 191 number of outputs;
+#X text 957 210 number of outputs;
 #X obj 219 459 unpack 0 0;
 #X text 370 679 granular synthesis example;
 #X text 371 700 double click to see inside;
 #X text 219 626 play speed;
 #X text 359 626 playhead start position;
-#X obj 403 85 serial_communication_example;
-#X msg 469 35 close;
-#X msg 469 60 devices;
-#X obj 403 14 hradio 15 1 0 8 empty empty port 0 -8 0 10 -262144 -1
+#X obj 460 86 serial_communication_example;
+#X msg 526 36 close;
+#X msg 526 61 devices;
+#X obj 460 15 hradio 15 1 0 8 empty empty port 0 -8 0 10 -262144 -1
 -1 3;
-#X msg 403 36 open \$1;
+#X msg 460 37 open \$1;
 #X obj 147 107 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 59 110 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -45,7 +45,7 @@
 #X text 99 195 speed;
 #X text 157 197 start pos;
 #X text 64 177 type in the training target;
-#X text 648 214 mode: classification 0 \, regression 1;
+#X text 908 233 mode: classification 0 \, regression 1;
 #X text 634 280 clear before starting new training;
 #X text 635 307 train after adding the data;
 #X obj 297 92 gate;
@@ -58,7 +58,7 @@
 #X obj 364 601 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
 #X obj 275 727 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 8600 1;
 #X text 408 727 volume;
 #X obj 218 483 / 100;
 #X obj 217 578 line;
@@ -77,14 +77,22 @@
 , f 63;
 #X msg 584 386 read /Users/mikst/Documents/workshop/LINZ/PD/testGranular.data
 , f 63;
-#X obj 586 114 loadbang;
-#X text 218 117 turn on to let the data go in;
-#X obj 384 66 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 846 133 loadbang;
+#X text 210 118 turn on to let the data go in;
+#X obj 441 67 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 585 138 delay 500;
-#X obj 586 161 t b b;
+#X obj 845 157 delay 500;
+#X obj 846 180 t b b;
 #X obj 218 728 *~ 0;
 #X obj 218 676 granular/granular, f 20;
+#X obj 461 118 unpack 0 0 0 0 0 0, f 29;
+#X floatatom 461 143 5 0 0 0 - - -;
+#X floatatom 500 143 5 0 0 0 - - -;
+#X floatatom 540 144 5 0 0 0 - - -;
+#X floatatom 580 144 5 0 0 0 - - -;
+#X floatatom 619 144 5 0 0 0 - - -;
+#X floatatom 659 145 5 0 0 0 - - -;
+#X obj 464 175 pack 0 0 0;
 #X connect 0 0 4 0;
 #X connect 1 0 4 0;
 #X connect 3 0 4 0;
@@ -114,8 +122,8 @@
 #X connect 21 0 20 0;
 #X connect 24 0 51 0;
 #X connect 24 1 58 0;
-#X connect 29 0 43 1;
 #X connect 29 0 67 0;
+#X connect 29 0 72 0;
 #X connect 30 0 29 0;
 #X connect 31 0 29 0;
 #X connect 32 0 33 0;
@@ -149,3 +157,13 @@
 #X connect 70 0 15 0;
 #X connect 70 0 15 1;
 #X connect 71 0 70 0;
+#X connect 72 0 73 0;
+#X connect 72 1 74 0;
+#X connect 72 2 75 0;
+#X connect 72 3 76 0;
+#X connect 72 4 77 0;
+#X connect 72 5 78 0;
+#X connect 73 0 79 0;
+#X connect 74 0 79 1;
+#X connect 75 0 79 2;
+#X connect 79 0 43 1;
