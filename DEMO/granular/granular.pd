@@ -31,7 +31,7 @@
 -1 -1 0 1;
 #X obj 138 227 wrap~;
 #X floatatom 250 185 5 0 0 0 - - -;
-#X obj 136 91 t a b;
+#X obj 136 75 t a b;
 #X msg 182 119 0;
 #X text 418 330 open sound file;
 #X text 394 94 play speed 0-1;
@@ -43,7 +43,7 @@
 #X obj 37 242 loadbang;
 #X obj 419 306 loadbang;
 #X text 599 162 playhead start position 0-1;
-#X obj 176 189 t a b;
+#X obj 181 179 t a b;
 #X obj 386 147 * 3;
 #X msg 420 353 read -resize ../sounds/sadsong.wav grainArray;
 #X connect 0 0 2 0;
@@ -78,6 +78,7 @@
 #X connect 26 0 41 0;
 #X connect 27 0 9 0;
 #X connect 29 0 8 0;
+#X connect 29 1 30 0;
 #X connect 30 0 8 1;
 #X connect 33 0 17 1;
 #X connect 35 0 23 0;
